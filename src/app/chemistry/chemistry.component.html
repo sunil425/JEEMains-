@@ -1,0 +1,85 @@
+<div class="row">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Question{{count+1}} </h5>
+            <p class="card-text" innerHTML="{{chemQuestion.data[0].sec_details[1].sec_questions[count].que.q_string}}">
+            </p>
+
+            <table>
+                    <tr>
+                        <td><input (click)="add(count+1)" type="radio" id="options1" [(ngModel)]="myRadio"
+                                value="option1"></td>
+                        <td style="padding-top: 14px; padding-left: 10px;"
+                            innerHTML=" {{chemQuestion.data[0].sec_details[1].sec_questions[count].que.q_option[0]}}">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><input (click)="add(count+1)" type="radio" id="options1" [(ngModel)]="myRadio"
+                                value="option2"></td>
+                        <td style="padding-top: 14px; padding-left: 10px;"
+                            innerHTML=" {{chemQuestion.data[0].sec_details[1].sec_questions[count].que.q_option[1]}}">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><input (click)="add(count+1)" type="radio" id="options1" [(ngModel)]="myRadio"
+                                value="option3"></td>
+                        <td style="padding-top: 14px; padding-left: 10px;"
+                            innerHTML=" {{chemQuestion.data[0].sec_details[1].sec_questions[count].que.q_option[2]}}">
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td><input (click)="add(count+1)" type="radio" id="options1" [(ngModel)]="myRadio"
+                                value="option4"></td>
+                        <td style="padding-top: 14px; padding-left: 10px;"
+                            innerHTML=" {{chemQuestion.data[0].sec_details[1].sec_questions[count].que.q_option[3]}}">
+                        </td>
+                    </tr>
+
+
+                </table>
+           
+            <div class="d-flex justify-content-between">
+                <button [disabled]="count<1" href="#" class="btn btn-primary "
+                    (click)="previousQuestion()">Previous</button>
+                <button [disabled]="count==29" href="#" class="btn btn-primary " (click)='nextQuestion()'>Next</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card" style="width: 414px; height: 150px;">
+        <div class="card-body">
+            <table>
+
+                <tr>
+                    <td style="padding: 5px;" *ngFor="let number of [].constructor(10) let i=index">
+                        <div (click)="show(i)"
+                            style="cursor:pointer;width: 27px; height: 29px; border: 2px black solid; text-align: center; ">
+                            {{i+1}}</div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="padding: 5px;" *ngFor="let number of [].constructor(10) let i=index">
+                        <div (click)="show(i+10)"
+                            style="cursor:pointer; width: 27px; height: 29px; border: 2px black solid; text-align: center; ">
+                            {{i+11}}</div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style=" padding: 5px;" *ngFor="let number of [].constructor(10) let i=index">
+
+                        <div (click)="show(i+20)"
+                            style="cursor:pointer; width: 27px; height: 29px; border: 2px black solid; text-align: center; ">
+                            {{i+21}}</div>
+                    </td>
+                </tr>
+
+            </table>
+
+        </div>
+    </div>
+</div>
